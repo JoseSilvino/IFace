@@ -75,6 +75,9 @@ public class User {
         public void receive_invite(ArrayList <User> users) {
             Scanner input = new Scanner(System.in);
             int id,t = this.requests.size();
+            if(t==0) {
+                System.out.println("you don't have friend requests");
+            }
             for(int i=0;i<t;i++) {
             System.out.printf("You accept be friend to %s ?\n 1 to accept 2 to reject\n",this.requests.get(i));
                 id = find(users,this.requests.get(i));
@@ -152,7 +155,7 @@ public class User {
         System.out.printf("Name : %s\n",see.profile.getName());
         System.out.printf("Gender : %s\n",see.profile.getGender());
         System.out.printf("Civil State : %s\n",see.profile.getCivil_State());
-        System.out.printf("Birth Day : %d/%d/d\n",see.profile.getDay(),see.profile.getMonth(),see.profile.getYear());
+        System.out.printf("Birth Day : %d/%d/%d\n",see.profile.getDay(),see.profile.getMonth(),see.profile.getYear());
         this.printCommunitys();
         }
     }

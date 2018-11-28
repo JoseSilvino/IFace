@@ -63,7 +63,7 @@ public final class Profile {
 		setGender(input.nextLine());
                 System.out.println("Type your  civil state");
 		setCivil_State(input.nextLine());
-                System.out.println("Tyoe your birth day , bith month and birth year");
+                System.out.println("Type your birth day , bith month and birth year");
 		setBirth(input.nextInt(),input.nextInt(),input.nextInt());
 		input.nextLine();
 	}

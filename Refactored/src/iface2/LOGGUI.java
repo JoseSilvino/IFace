@@ -11,7 +11,8 @@ import java.util.*;
  * @author Neto
  */
 public class LOGGUI extends javax.swing.JFrame {
-    HashMap<String,User> users = new HashMap<>(30);
+    public LinkedHashMap<String,User> users = new LinkedHashMap<>(30);
+    public LinkedHashMap<String,Community>communitys = new LinkedHashMap<>(30);
     /**
      * Creates new form LOGGUI
      */
@@ -113,6 +114,7 @@ public class LOGGUI extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Login log = new Login();
         log.users = this.users;
+        log.communitys = communitys;
         log.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed

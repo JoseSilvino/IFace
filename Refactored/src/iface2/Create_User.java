@@ -194,11 +194,11 @@ public class Create_User extends javax.swing.JFrame {
         try {
         String name = jTextField1.getText();
         String nick = jTextField2.getText();
+        if(!users.containsKey(nick)) {
         String password = "";
                 for(int i = 0 ; i<this.jPasswordField1.getPassword().length;i++) {
                     password = password + jPasswordField1.getPassword()[i];
                 }
-               //password  jPasswordField1.getText();
           int day = Integer.parseInt(jTextField3.getText());
           int month = Integer.parseInt(jTextField4.getText());
           int year = Integer.parseInt(jTextField5.getText());
@@ -209,6 +209,10 @@ public class Create_User extends javax.swing.JFrame {
           JOptionPane.showMessageDialog(null,"Created");
           System.out.println(users);
           this.setVisible(false);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,nick + " Already Exists");
+        }
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Invalid Format");
         }

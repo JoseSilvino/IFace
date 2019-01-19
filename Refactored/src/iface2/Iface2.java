@@ -29,9 +29,7 @@ public class Iface2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        HashMap<String,User> users = new HashMap<>();
         LOGGUI nlg = new LOGGUI();
-        nlg.users = users;
         nlg.setVisible(true);
 }
 }

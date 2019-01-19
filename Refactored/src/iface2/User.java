@@ -29,7 +29,9 @@ public class User implements Users_interface {
     public String getUsername() {
         return nickname;
     }
-
+      public HashMap getFriendsHash() {
+        return friends;
+    }
     public void setUsername(String nick) {
         this.nickname = nick;
     }
@@ -79,6 +81,14 @@ public class User implements Users_interface {
     }
     public String getReq(int i) {
         return this.friend_req.get(i);
+    }
+    public void removeMessages(String nick) {
+        int t = messages.size();
+        for(int i = 0 ; i < t ; i ++) {
+            if(messages.get(i).getSent_by().equals(nick)) {
+                messages.remove(i);
+            }
+        }
     }
     public void remove_req(String nick) {
         int t = this.friend_req.size();

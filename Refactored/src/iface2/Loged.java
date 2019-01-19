@@ -9,7 +9,7 @@ package iface2;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.swing.*;
-import java.util.HashMap;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.Image;
@@ -19,7 +19,8 @@ import java.awt.Image;
  */
 public class Loged extends javax.swing.JFrame {
     public User loged;
-    public HashMap<String,User> users;
+    public LinkedHashMap<String,User> users;
+    public LinkedHashMap<String,Community> communitys;
     /** Creates new form Loged */
     public Loged() {
         initComponents();
@@ -53,6 +54,9 @@ public class Loged extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
 
         jFrame1.setTitle("K");
         jFrame1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -205,6 +209,27 @@ public class Loged extends javax.swing.JFrame {
             }
         });
 
+        jButton11.setText("Create Community");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jButton12.setText("Visit Community Page");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("Delete Account");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
         jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -214,6 +239,9 @@ public class Loged extends javax.swing.JFrame {
         jDesktopPane1.setLayer(jButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jButton9, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jButton10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jButton11, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jButton12, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jButton13, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -244,7 +272,14 @@ public class Loged extends javax.swing.JFrame {
                                 .addComponent(jButton5))
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton13)
+                                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
                 .addContainerGap())
         );
         jDesktopPane1Layout.setVerticalGroup(
@@ -258,19 +293,28 @@ public class Loged extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton8)
-                            .addComponent(jButton9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
-                        .addContainerGap())
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(0, 6, Short.MAX_VALUE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButton8)
+                                    .addComponent(jButton9))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton10))
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGap(99, 99, 99)
+                                .addComponent(jButton11)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton13)
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton5)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -400,6 +444,84 @@ public class Loged extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        String name = JOptionPane.showInputDialog("Community Name");
+        if(!communitys.containsKey(name)) {
+        Community to_add = new Community(name,loged);
+        this.communitys.put(name, to_add);
+        JOptionPane.showMessageDialog(null,"Created "+ name);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, name + " Already exists");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        String co_n = JOptionPane.showInputDialog("Community name ?");
+        if(communitys.containsKey(co_n)) {
+            if(communitys.get(co_n).isAdmin(this.loged.getUsername())) {
+                Community_Admin ca = new Community_Admin();
+                ca.loged = this.loged;
+                ca.jLabel1.setIcon(communitys.get(co_n).getProfileImg());
+                ca.comunidade = communitys.get(co_n);
+                ca.users = this.users;
+                ca.setVisible(true);
+            }
+            else if(this.communitys.get(co_n).isMember(this.loged.getUsername())) {
+                Community_member cm = new Community_member();
+                cm.jLabel1.setIcon(communitys.get(co_n).getProfileImg());
+                cm.comunidade = communitys.get(co_n);
+                cm.setVisible(true);
+                
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"You're not a member of this Community"+ "Ask one of them :\n"+ communitys.get(co_n).getAdmins().toString());
+            }
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"This Community Doesn't Exists");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        int t = this.users.size();
+        for(int i = 0 ; i < t ; i ++) {
+            if(users.get((String)users.keySet().toArray()[i])!=null) {
+                if(users.get((String)users.keySet().toArray()[i]).getFriendsHash().containsKey(loged.getUsername())) {
+                    users.get((String)users.keySet().toArray()[i]).getFriendsHash().remove(loged.getUsername());
+                }
+                (users.get((String)users.keySet().toArray()[i])).remove_req(loged.getUsername());
+                (users.get((String)users.keySet().toArray()[i])).removeMessages(loged.getUsername());
+            }
+        }
+        t = this.communitys.size();
+        for(int i = 0 ; i < t ; i ++) {
+            Community com = communitys.get((String)communitys.keySet().toArray()[i]);
+            if(com!=null) {
+                if(com.isMember(loged.getUsername())) {
+                    com.RemoveMember(loged.getUsername());
+                }
+                if(com.isAdmin(loged.getUsername())) {
+                    com.removeAdmin(loged.getUsername());
+                }
+                if(com.getMain_admin().equals(loged)) {
+                    String nick =  JOptionPane.showInputDialog("Who will get your main admin place in " + com.getName());
+                    while(!users.containsKey(nick)) {
+                        nick = JOptionPane.showInputDialog("This user doesn't exist ,try other");
+                    }
+                    com.setMain_admin(users.get(nick));
+                    
+                }
+            }
+        }
+        users.remove(loged.getUsername());
+        this.setVisible(false);
+        System.out.println(users);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -438,6 +560,9 @@ public class Loged extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

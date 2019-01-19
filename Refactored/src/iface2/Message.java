@@ -42,7 +42,7 @@ public class Message {
     
     @Override
     public String toString() {
-        return sent_by + " " + message + "\n"+ sdf.format(time.getTime());
+        return sent_by + ": " + message + "\n"+ sdf.format(time.getTime());
     }
     public Message(String message, String sent_by, Calendar time  ) {
         this.message = message;

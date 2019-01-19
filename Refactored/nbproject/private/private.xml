@@ -3,16 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Iface2/src/iface2/Loged.java</file>
-            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Iface2/src/iface2/User.java</file>
-            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Iface2/src/iface2/Login.java</file>
-            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Iface2/src/iface2/ProfileGUI.java</file>
-            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Iface2/src/iface2/EditGUI.java</file>
-            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Iface2/src/iface2/Message.java</file>
-            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Iface2/src/iface2/Create_User.java</file>
-            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Iface2/src/iface2/Iface2.java</file>
-            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Iface2/src/iface2/Profile.java</file>
-            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Iface2/src/iface2/LOGGUI.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/Login.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/Users_interface.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/Community.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/ProfileGUI.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/Iface2.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/Loged.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/Message.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/EditGUI.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/User.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/LOGGUI.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/Community_Admin.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/Profile.java</file>
+            <file>file:/C:/Users/INFOR/Desktop/Iface2/src/iface2/Community_member.java</file>
         </group>
     </open-files>
 </project-private>

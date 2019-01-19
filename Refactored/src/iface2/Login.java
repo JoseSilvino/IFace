@@ -5,14 +5,15 @@
  */
 
 package iface2;
-import java.util.HashMap;
+import java.util.*;
 import javax.swing.JOptionPane;
 /**
  *
  * @author Neto
  */
 public class Login extends javax.swing.JFrame {
-    public HashMap<String,User>users;
+    public LinkedHashMap<String,User>users;
+    public LinkedHashMap<String,Community> communitys;
     /** Creates new form Login */
     public Login() {
         initComponents();
@@ -147,6 +148,7 @@ public class Login extends javax.swing.JFrame {
                 login.loged =this.users.get(username);
                 login.jLabel1.setText("Welcome "+username);
                 login.users = users;
+                login.communitys = communitys;
                 login.jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(login.loged.Req_Arr()));
                 login.jLabel3.setIcon(login.loged.image);
                  this.setVisible(false);

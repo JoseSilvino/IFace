@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
  *
  * @author Neto
  */
-public class User implements Users_interface {
+public class User  {
 
     private String name;
     private String password;

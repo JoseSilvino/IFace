@@ -10,6 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import javax.swing.*;
 import java.util.*;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.Image;
@@ -396,6 +397,10 @@ public class Loged extends javax.swing.JFrame {
         ProfileGUI jFrame2 = new ProfileGUI();
         jFrame2.jLabel1.setIcon(loged.image);
         jFrame2.user = this.loged;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        jFrame2.jLabel3.setText(sdf.format(loged.getProfile().getBirthDay().getTime()));
+        jFrame2.jLabel4.setText(loged.getProfile().getCivil_State());
+        jFrame2.jLabel5.setText(loged.getProfile().getGender());
         jFrame2.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -410,6 +415,7 @@ public class Loged extends javax.swing.JFrame {
             ((ProfileGUI)see).jLabel3.setText(sdf.format(day.getTime()));
             ((ProfileGUI)see).jLabel4.setText(users.get(nick).getProfile().getCivil_State());
             ((ProfileGUI)see).jLabel5.setText(users.get(nick).getProfile().getGender());
+            
             see.setVisible(true);
          }else {
             JOptionPane.showMessageDialog(null, "This User Doesn't Exist");
@@ -466,12 +472,23 @@ public class Loged extends javax.swing.JFrame {
                 ca.jLabel1.setIcon(communitys.get(co_n).getProfileImg());
                 ca.comunidade = communitys.get(co_n);
                 ca.users = this.users;
+                String s = "";
+                for(int i = 0 ; i < ca.comunidade.getMessages().size() ;i++) {
+                    s = s + ca.comunidade.getMessages().get(i) + "\n";
+                }
+                ca.jTextArea1.setText(s);
                 ca.setVisible(true);
             }
             else if(this.communitys.get(co_n).isMember(this.loged.getUsername())) {
                 Community_member cm = new Community_member();
                 cm.jLabel1.setIcon(communitys.get(co_n).getProfileImg());
                 cm.comunidade = communitys.get(co_n);
+                
+                String s = "";
+                for(int i = 0 ; i < cm.comunidade.getMessages().size() ;i++) {
+                    s = s + cm.comunidade.getMessages().get(i) + "\n";
+                }
+                cm.jTextArea1.setText(s);
                 cm.setVisible(true);
                 
             }
@@ -502,6 +519,12 @@ public class Loged extends javax.swing.JFrame {
             if(com!=null) {
                 if(com.isMember(loged.getUsername())) {
                     com.RemoveMember(loged.getUsername());
+                    ArrayList<Message> mes = com.getMessages();
+                    for(int j = 0 ; i < mes.size() ; j ++) {
+                        if(mes.get(j).getSent_by().equals(loged.getUsername())) {
+                            mes.set(j, new Message("Este usuário foi removido"));
+                        }
+                    }
                 }
                 if(com.isAdmin(loged.getUsername())) {
                     com.removeAdmin(loged.getUsername());

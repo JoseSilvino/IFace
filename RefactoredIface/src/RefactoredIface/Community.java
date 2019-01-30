@@ -8,7 +8,7 @@ package RefactoredIface;
 import java.awt.Image;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
+import java.util.*;
 import javax.swing.*;
 /**
  *
@@ -20,6 +20,16 @@ public class Community {
     private ImageIcon profileImg = new ImageIcon((new ImageIcon(getClass().getResource("/Images/Huxley.png"))).getImage().getScaledInstance(220, 220, Image.SCALE_SMOOTH)) ;
     private User main_admin;
     private String name;
+    private ArrayList<Message> messages;
+    
+
+    public ArrayList<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(ArrayList<Message> messages) {
+        this.messages = messages;
+    }
     
 
     public String getName() {
@@ -73,12 +83,15 @@ public class Community {
     public void setImage(ImageIcon profileImg) {
         this.profileImg = profileImg;
     }
-    
+    public void addMessage(Message mes) {
+        this.messages.add(mes);
+    }
     public Community(String name,User admin) {
         this.members = new HashMap<>();
         this.admins = new HashMap<>();
         this.members.put(admin.getUsername(),admin);
         this.admins.put(admin.getUsername(),admin);
         this.main_admin = admin;
+        this.messages = new ArrayList<>();
     }
 }

@@ -10,7 +10,7 @@ import java.util.*;
  *
  * @author Neto
  */
-public class LOGGUI extends javax.swing.JFrame {
+public class LOGGUI extends JFrame {
     public LinkedHashMap<String,User> users = new LinkedHashMap<>(30);
     public LinkedHashMap<String,Community>communitys = new LinkedHashMap<>(30);
     /**

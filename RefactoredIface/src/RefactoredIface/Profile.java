@@ -10,7 +10,7 @@ package RefactoredIface;
  */
 import java.util.*;
 import java.text.*;
-public class Profile implements Users_interface{
+public class Profile {
     private String gender;
     private final Calendar birthday;
     private String civil_state;

@@ -49,5 +49,7 @@ public class Message {
         this.sent_by = sent_by;
         this.time = time;
     }
-    
+    public Message(String mes) {
+        this.message = mes;
+    } 
 }
